@@ -2,7 +2,7 @@ import {User} from '../models/User.model.js';
 import bcryptjs from 'bcryptjs';
 import crypto from 'crypto';
 import { generateTokenAndSetCookie} from '../utils/generateTokenAndSetCookie.js';
-import { sendverificationEmail,sendWelcomeEmail,sendPasswordResetEmail ,sendResetSuccessEmail} from '../mailtrap/emails.js';
+import { sendVerificationEmail,sendWelcomeEmail,sendPasswordResetEmail ,sendResetSuccessEmail} from '../nodemailer/emails.js';
 
 export const signup=async(req,res)=>{
     const {email,password,name}=req.body;
@@ -31,7 +31,7 @@ export const signup=async(req,res)=>{
         generateTokenAndSetCookie(res,user._id);
 
 
-        await sendverificationEmail (user.email,verificationToken);
+        await sendVerificationEmail (user.email,verificationToken);
         res.status(201).json({
             success:true,
             message:"User created successfully",

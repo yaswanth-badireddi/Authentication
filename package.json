@@ -4,8 +4,8 @@
   "description": "",
   "main": "backend/index.js",
   "scripts": {
-     "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
-  "start": "cross-env NODE_ENV=production node backend/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
+    "start": "cross-env NODE_ENV=production node backend/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "jsonwebtoken": "^9.0.2",
     "mailtrap": "^4.1.0",
     "mongoose": "^8.16.0",
+    "nodemailer": "^6.10.1",
     "react-router-dom": "^7.6.2",
     "tailwindcss": "^4.1.10"
   },
